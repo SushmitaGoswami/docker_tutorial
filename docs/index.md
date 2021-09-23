@@ -45,6 +45,12 @@ Windows or Mac Os creates a linux virtual system which interacts with the guest 
 
 <img src ="https://user-images.githubusercontent.com/20486206/134535487-1ed6064f-b5ae-4c53-99ab-4b8e06906a17.png" width="500" height="500"/>
 
+## What happens when a dockerfile is used to build a docker image?
+
+Container pulls the base image and starts a temporary container based on that. Then it runs the command specified in the dockerfile. It takes the file system attached to that container and replace the new file system with the old one and tags the newly created image with a new name and delete the temporary container.
+  
+<img src ="https://user-images.githubusercontent.com/20486206/134543949-feece562-0abe-44ab-9594-e052bd8a3c92.png" width="500" height="500"/>
+
 
 ## A few docker commands
 
@@ -55,4 +61,13 @@ Windows or Mac Os creates a linux virtual system which interacts with the guest 
 - Docker run additional command - docker exec -it <container_id/name> <run_command>
 - Docker logs - docker logs <container_id>
 - Docker get command prompt - docker exec -it <container_id/name> sh
+- Docker stop container - docker stop/kill <container_id/name> - docker kill triggers SIGKILL and stop triggers SIGTERM.
+- Tag image during build - dokcer build -t <name(repo/image_name:version)> /path/to/folder
+  
+
+## Create docker image from container
+  1. Start a container based on a base image.
+  2. Install the specific software in that container
+  3. commit the new filesystem of the running container as a new image -> docker commit -c <start command> <container_name>
+  4. Start a new container with the newly created image.
 
