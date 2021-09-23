@@ -1,37 +1,57 @@
-## Welcome to GitHub Pages
+# Welcome to Docker Tutorial
 
-You can use the [editor on GitHub](https://github.com/SushmitaGoswami/docker_tutorial/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+## What is Docker?
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Docker is an ecosystem of several tools which helps to build and run containerized application. Following are some of the tools that docker hosts.
 
-### Markdown
+<img src ="https://user-images.githubusercontent.com/20486206/134521036-a743d1ae-19c7-4e07-a415-18b03fac6063.png" width="500" height="500"/>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Why we should use docker?
 
-```markdown
-Syntax highlighted code block
+- It helps to install a software without any hustle as the docker image contains all the dependencies and the config files required to run the installer.
+- It enables the user to have multiple version of a single library in the system. 
+  <img src ="https://user-images.githubusercontent.com/20486206/134533121-daf16f8a-7652-4bc5-9fc1-4695f8e01860.png" width="500" height="500"/>
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+## What is the idea behind docker?
 
-1. Numbered
-2. List
+Docker uses the concept of namespace segregation principal.
 
-**Bold** and _Italic_ and `Code` text
+<img src ="https://user-images.githubusercontent.com/20486206/134533228-f20995b1-912f-42d6-92c3-186fd1db9230.png" width="500" height="500"/>
 
-[Link](url) and ![Image](src)
-```
+It allows each container to have some portion of resources such as CPU, Memory, HD, Network Bandwidth. Control groups are there to decide how much resources each container will use. 
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+<img src ="https://user-images.githubusercontent.com/20486206/134533424-02cbac79-9bd1-4241-8ffd-04b7489690bf.png" width="500" height="500"/>
 
-### Jekyll Themes
+## What happens when a docker image is pulled?
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/SushmitaGoswami/docker_tutorial/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+<img src ="https://user-images.githubusercontent.com/20486206/134533670-66e0ea79-ca84-4d53-a143-37a684f949aa.png" width="500" height="500"/>
 
-### Support or Contact
+## What is docker image?
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Docker image contains file system which contains all the dependencies and config files and run command which is used by the container to start a process
+
+<img src ="https://user-images.githubusercontent.com/20486206/134534400-7f1e788c-2e78-4db0-92f7-1eb0bf04f861.png" width="500" height="500"/>
+
+## What happens when docker container runs on system?
+
+Docker container copies the file system from the docker image within the container and runs the runcommand to start the process.
+
+<img src ="https://user-images.githubusercontent.com/20486206/134534843-de9a6fe2-7010-4972-b694-af6d5b2e95ee.png" width="500" height="500"/>
+
+## What happens when you install docker in Windows or Mac OS?
+
+Windows or Mac Os creates a linux virtual system which interacts with the guest os.
+
+<img src ="https://user-images.githubusercontent.com/20486206/134535487-1ed6064f-b5ae-4c53-99ab-4b8e06906a17.png" width="500" height="500"/>
+
+
+## A few docker commands
+
+- Pull Image - docker pull <image_name>
+- Docker create container - docker create <image_name>
+- Docker start container - docker start <container_id>/ docker run <container_id>. The difference between start and run is that run prints the logs in the stdout by default. But start command will only print if a special option -a is passed.
+- Docker replace start command - docker run <image_name> <runcommand>
+- Docker run additional command - docker exec -it <container_id/name> <run_command>
+- Docker logs - docker logs <container_id>
+
