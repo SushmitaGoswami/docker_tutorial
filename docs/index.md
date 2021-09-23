@@ -54,4 +54,5 @@ Windows or Mac Os creates a linux virtual system which interacts with the guest 
 - Docker replace start command - docker run <image_name> <runcommand>
 - Docker run additional command - docker exec -it <container_id/name> <run_command>
 - Docker logs - docker logs <container_id>
+- Docker get command prompt - docker exec -it <container_id/name> sh
 
