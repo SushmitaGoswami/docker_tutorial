@@ -25,7 +25,7 @@ It allows each container to have some portion of resources such as CPU, Memory, 
 
 ## What happens when a docker image is pulled?
 
-<img src ="https://user-images.githubusercontent.com/20486206/134533670-66e0ea79-ca84-4d53-a143-37a684f949aa.png" width="500" height="500"/>
+<img src ="https://user-images.githubusercontent.com/20486206/134533670-66e0ea79-ca84-4d53-a143-37a684f949aa.png" width="1000" height="500"/>
 
 ## What is docker image?
 
