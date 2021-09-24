@@ -86,24 +86,44 @@ Container pulls the base image and starts a temporary container based on that. T
   <img src="https://user-images.githubusercontent.com/20486206/134623238-cd7db5fc-325b-4bb1-b5c5-e9d568808a27.png" width="500" height="500"/>
   
   **Command** - docker run -it <container_name> -v ${pwd}:/app
-
+  
+  ### Bookmarking docker volumes
+  
   
 
   
 ## Networking
   - **Docker Compose**
     It will automatically create a network which will connect all the services running in different container. In the following example, node-app can connect to redis server by just using the **redis-server** as host name. 
-    - **Sample docker file**
+   
+   - **Sample docker file**
       ```
       version: '3'
       services:
         redis-server:
           image: 'redis'
+        
         node-app:
-          build: .
+          build:
+            context: .
+            dockerfile: Dockerfile.dev
           ports:
             - '4001:8081'
-      ```
+          volumes:
+            - /app/node_modules <!-- This is for bookmarking volumes -->
+            - .:/app <!-- This is for volume mount (local pwd folder to app folder)-->
+  
+        tests:
+          build:
+            context: .
+            dockerfile: Dockerfile.dev
+            volumes:
+              - /app/node_modules
+              - .:/app
+            command: ['npm', 'run', 'test']
+                
+       ``` 
+  
     - **Docker container auto restart**
       **Restart policies**
       - **no** : No start - default.
@@ -112,7 +132,7 @@ Container pulls the base image and starts a temporary container based on that. T
       - **unless-stopped** : Restart unless it is stopped forcibly.
  
   
-  - Use docker-cli's internal networking
+   - Use docker-cli's internal networking
   
 
   
