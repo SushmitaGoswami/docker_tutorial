@@ -71,3 +71,15 @@ Container pulls the base image and starts a temporary container based on that. T
   3. commit the new filesystem of the running container as a new image -> docker commit -c <start command> <container_name>
   4. Start a new container with the newly created image.
 
+## Port Mapping
+  
+  docker run -it <container_name> <host_port>:<container_port>
+ 
+  <img src="https://user-images.githubusercontent.com/20486206/134553168-7935ef4f-dc19-4045-951e-4e344cb0b0ef.png" width="500" height="500"/>
+
+## Workding Dir
+  WORKDIR /usr/app
+  
+  
+  
+  
