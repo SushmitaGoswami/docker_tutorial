@@ -80,6 +80,21 @@ Container pulls the base image and starts a temporary container based on that. T
 ## Workding Dir
   WORKDIR /usr/app
   
+## Connect two running containers
+  - **Docker Compose**
+    It will automatically create a network which will connect all the services running in different container. In the following example, node-app can connect to redis server by just using the **redis-server** as host name. 
+    **Sample docker file**
+    ```
+    version: '3'
+    services:
+      redis-server:
+        image: 'redis'
+      node-app:
+        build: .
+        ports:
+          - '4001:8081'
+    ```
+  - Use docker-cli's internal networking
   
-  
+
   
