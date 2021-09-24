@@ -75,7 +75,7 @@ Container pulls the base image and starts a temporary container based on that. T
   
   docker run -it <container_name> <host_port>:<container_port>
  
-  <img src="https://user-images.githubusercontent.com/20486206/134553168-7935ef4f-dc19-4045-951e-4e344cb0b0ef.png" width="700" height="500"/>
+  <img src="https://user-images.githubusercontent.com/20486206/134553168-7935ef4f-dc19-4045-951e-4e344cb0b0ef.png" width="1000" height="500"/>
 
 ## Workding Dir
   WORKDIR /usr/app
