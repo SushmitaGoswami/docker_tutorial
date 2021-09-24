@@ -80,7 +80,17 @@ Container pulls the base image and starts a temporary container based on that. T
 ## Workding Dir
   WORKDIR /usr/app
   
-## Connect two running containers
+## Docker volumes
+  Docker volumes allows to map any location from host machine to docker container so that any change in the local files will be reflected within the container automatically.
+  
+  <img src="https://user-images.githubusercontent.com/20486206/134623238-cd7db5fc-325b-4bb1-b5c5-e9d568808a27.png" width="500" height="500"/>
+  
+  **Command** - docker run -it <container_name> -v ${pwd}:/app
+
+  
+
+  
+## Networking
   - **Docker Compose**
     It will automatically create a network which will connect all the services running in different container. In the following example, node-app can connect to redis server by just using the **redis-server** as host name. 
     - **Sample docker file**
