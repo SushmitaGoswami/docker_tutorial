@@ -83,17 +83,25 @@ Container pulls the base image and starts a temporary container based on that. T
 ## Connect two running containers
   - **Docker Compose**
     It will automatically create a network which will connect all the services running in different container. In the following example, node-app can connect to redis server by just using the **redis-server** as host name. 
-    **Sample docker file**
-    ```
-    version: '3'
-    services:
-      redis-server:
-        image: 'redis'
-      node-app:
-        build: .
-        ports:
-          - '4001:8081'
-    ```
+    - **Sample docker file**
+      ```
+      version: '3'
+      services:
+        redis-server:
+          image: 'redis'
+        node-app:
+          build: .
+          ports:
+            - '4001:8081'
+      ```
+    - **Docker container auto restart**
+      **Restart policies**
+      - **no** : No start - default.
+      - **always** : Always restart for any reason.
+      - **on-failure** : Restart only when an error occurred
+      - **unless-stopped** : Restart unless it is stopped forcibly.
+ 
+  
   - Use docker-cli's internal networking
   
 
